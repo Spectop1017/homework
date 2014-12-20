@@ -1,0 +1,102 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity"
+    android:background="#5000ff00">
+
+    <TextView
+        android:id="@+id/tittle_Top"
+        android:text="@string/tittle"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20pt"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/text_UsrName"
+        android:layout_below="@id/tittle_Top"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10pt"
+        android:text="用户名："/>
+
+    <EditText
+        android:id="@+id/info_Usr_Name"
+        android:layout_below="@id/tittle_Top"
+        android:layout_toRightOf="@id/text_UsrName"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:capitalize="sentences"
+        android:singleLine="true"
+        android:text="@string/information_return"
+        android:hint="@string/usrname_In"
+        />
+
+    <TextView
+        android:id="@+id/text_Pass"
+        android:layout_below="@id/text_UsrName"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10pt"
+        android:text="密码："/>
+
+    <EditText
+        android:id="@+id/info_Usr_Pass"
+        android:layout_below="@id/info_Usr_Name"
+        android:layout_toRightOf="@id/text_Pass"
+        android:layout_alignLeft="@id/info_Usr_Name"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:hint="@string/pass_In"
+        android:password="true"/>
+
+    <CheckBox
+        android:id="@+id/rem_Me"
+        android:layout_below="@id/info_Usr_Pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="    记住密码"/>
+
+    <TextView
+        android:id="@+id/nothing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rem_Me"
+        android:padding="10dp"
+        />
+
+
+
+    <Button
+        android:id="@+id/butt_Log_In"
+        android:layout_below="@id/nothing"
+        android:text="@string/log_In"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/reg_Button"
+        android:layout_below="@id/butt_Log_In"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00000000"
+        android:text="@string/reg"
+        />
+
+
+</RelativeLayout>

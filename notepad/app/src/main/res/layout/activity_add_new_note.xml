@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/background_dim"
+    >
+
+    <TextView
+        android:id="@+id/add_note_tittle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="添加一个新的笔记"
+        android:textSize="16pt"
+        android:textStyle="bold"
+        />
+
+    <ImageView
+        android:id="@+id/line_note"
+        android:layout_below="@id/add_note_tittle"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#000000"
+        />
+
+    <TextView
+        android:id="@+id/tittle_note_editor"
+        android:layout_below="@id/line_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="标题:"
+        android:textSize="14pt"
+        />
+
+    <EditText
+        android:id="@+id/tittle_note"
+        android:layout_toRightOf="@id/tittle_note_editor"
+        android:layout_alignBottom="@id/tittle_note_editor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:padding="16dp"
+        android:hint="输入笔记的标题"
+        />
+
+    <Button
+        android:id="@+id/submite_note"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        android:background="#30ff0000"
+        android:text="保     存"
+        />
+
+    <EditText
+        android:id="@+id/content_note_editor"
+        android:layout_below="@id/tittle_note_editor"
+        android:layout_above="@id/submite_note"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp"
+        android:hint="在这里写点什么！"
+        android:singleLine="false"
+        android:gravity="top"
+        />
+
+</RelativeLayout>

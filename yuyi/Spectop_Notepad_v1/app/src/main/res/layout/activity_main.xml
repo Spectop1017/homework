@@ -1,0 +1,69 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="#5000ff00"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/main_top_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="我的笔记"
+        android:textSize="20pt"
+        android:gravity="center"
+        />
+
+    <ImageView
+        android:id="@+id/main_line_1"
+        android:layout_below="@id/main_top_title"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="#000000"
+        />
+
+    <EditText
+        android:id="@+id/main_content_title"
+        android:layout_below="@id/main_line_1"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:hint="在次输入标题"
+        />
+
+
+    <Button
+        android:id="@+id/main_save"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAVE"
+        android:textSize="16pt"
+        />
+
+    <Button
+        android:id="@+id/main_load"
+        android:layout_alignTop="@id/main_save"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16pt"
+        android:text="LOAD"
+        />
+
+    <EditText
+        android:id="@+id/main_content_note"
+        android:layout_below="@id/main_content_title"
+        android:layout_above="@id/main_save"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="在此输入笔记内容"
+        />
+
+</RelativeLayout>

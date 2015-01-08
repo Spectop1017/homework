@@ -1,0 +1,146 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" //相当于声明引用了一个android内部的大包
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:background="@android:color/holo_orange_light"
+    android:orientation="vertical"
+    android:paddingEnd="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    tools:context=".MainActivity">
+/*
+  表示这个页面的基本格式
+  padding表示内边距
+  width，height，margin，background分别表示：宽度，高度，外边距，背景。
+  dp是表示大小的单位
+  @android:color/holo_orange_light  是用了android内部自定义的一些颜色，由于不同设备的配置可能不一样，用这些也许会导致颜色的差异。
+  android:orientation="vertical"  表示让页面的所有对象垂着排列，默认会是水平的 ，horizontal 表示水平的。
+  match_parent 表示适应父类的大小
+  warp_content 表示适应文字图片等内容的大小
+  */
+  
+    <View    //View的好处就是快
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:background="@drawable/ic_launcher" />   //drewable 表示用图片填充背景
+
+    <TextView  //文本
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_text_view_size"
+        android:background="@color/main_text_color"
+        android:text="@string/hello_world"
+        android:textColor="@color/main_text_color_2"
+        android:textSize="@dimen/main_text_size" />
+/*
+这里以及以后出现的@……表示我已经在value文件夹下面设置了相关的参数，特别是一些需要使用多次的特性。
+*/
+    <ImageView  //图片
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black"
+        android:scaleType="fitXY"    //表示填充整个页面
+        android:src="@drawable/ic_launcher" />
+
+    <EditText   //文本框（输入）
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hello_world"
+        android:textColorHint="@color/background_floating_material_dark" />
+
+    <CheckBox  //复选框
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/hello_world" />
+
+    <RadioGroup  //单选按钮组
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton  //单选按钮，下同
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RadioGroup>
+
+    <ToggleButton  //按钮
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout   //线性布局
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="@string/hello_world"
+            android:layout_weight="2"/>  //weight表示是所占权重，IDE 会根据百分比来绘制他的大小
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="@string/hello_world"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:gravity="center"    //居中
+        android:weightSum="2"    //设置这一块线性布局的总权重
+        android:background="@color/main_text_color">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/holo_orange_light"
+            android:text="@string/hello_world"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical|end"
+            android:drawableLeft="@drawable/ic_launcher"
+            android:drawablePadding="16dp"/>
+
+    </LinearLayout>
+
+    <RelativeLayout  //学长强力推荐
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <Button
+            android:id="@+id/button_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hello_world"
+            android:layout_centerInParent="true"/>
+
+        <Button
+            android:id="@+id/button_1"  //添加id，方便之后用id进行一些操作
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hello_world"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@id/button_2"/>设置和id和button_2对齐
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hello_world"
+            android:layout_below="@id/button_2"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

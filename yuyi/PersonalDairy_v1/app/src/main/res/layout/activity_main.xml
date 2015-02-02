@@ -1,0 +1,54 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/text_top_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:textSize="16pt"
+        android:gravity="center_horizontal"
+        android:text="我 的 日 记" />
+
+    <ImageView
+        android:id="@+id/image_line"
+        android:layout_below="@id/text_top_title"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginBottom="8dp"
+        android:background="#505050"
+        />
+
+    <ImageButton
+        android:id="@+id/button_add_new_dairy"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_above="@id/image_line"
+        android:layout_height="wrap_content"
+        android:src="@drawable/add_new_dairy"
+        android:background="#00000000"/>
+
+
+    <ListView
+        android:id="@+id/list_dairy_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/image_line"
+        android:fadingEdge="vertical"
+        android:fadingEdgeLength="4dp"
+        android:divider="@null"
+        android:dividerHeight="8dp"
+        android:scrollbars="none"
+        >
+
+    </ListView>
+
+</RelativeLayout>

@@ -1,4 +1,4 @@
-package net.muxistudio.personaldairy_v1;
+package net.muxistudio.personaldairy_v1.module;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,12 +7,23 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import net.muxistudio.personaldairy_v1.R;
+import net.muxistudio.personaldairy_v1.database.DataBaseHelper;
+import net.muxistudio.personaldairy_v1.database.MyDairyDao;
+
+import java.util.List;
+import java.util.Map;
+
 /**
  * Created by root on 15-2-2.
  */
 public class DairyAdapter extends BaseAdapter {
     private Context context;
     private LayoutInflater layoutInflater;
+    MyDairyDao myDairyDao = new MyDairyDao(context);
+
+
+    List<Map<String ,String >> list = myDairyDao.loadDairy();
 
     public DairyAdapter(Context context) {
         this.context = context;
@@ -21,7 +32,7 @@ public class DairyAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 10;
+        return getIndex(list);
     }
 
     @Override
@@ -48,9 +59,8 @@ public class DairyAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) view.getTag();
         }
 
-        viewHolder.title.setText("This is the No." + i + " message!");
-        viewHolder.content.setText("I just want to write something here! \n Nothing important, " +
-                "really \n Then just finish it.");
+        viewHolder.title.setText(getTitle(list,i));
+        viewHolder.content.setText(getContent(list,i));
 
         return view;
     }
@@ -59,4 +69,22 @@ public class DairyAdapter extends BaseAdapter {
         TextView title;
         TextView content;
     }
+
+    protected int getIndex(List list) {
+        return list.size();
+    }  //返回list长度
+
+    protected String getTitle(List list, int i) {
+        String title;
+        Map<String ,String > map = (Map<String, String>) list.get(i);
+        title = map.get(DataBaseHelper.KEY_DAIRY_TITLE);
+        return title;
+    }  //返回list(i)的title
+
+    protected String getContent(List list,int i) {
+        String content;
+        Map<String ,String > map = (Map<String, String>) list.get(i);
+        content = map.get(DataBaseHelper.KEY_DAIRY_CONTENT);
+        return content;
+    }  //返回list(i)的content
 }

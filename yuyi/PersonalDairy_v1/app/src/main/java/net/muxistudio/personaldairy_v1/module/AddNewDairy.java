@@ -1,9 +1,11 @@
-package net.muxistudio.personaldairy_v1;
+package net.muxistudio.personaldairy_v1.module;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import net.muxistudio.personaldairy_v1.R;
 
 
 public class AddNewDairy extends ActionBarActivity {

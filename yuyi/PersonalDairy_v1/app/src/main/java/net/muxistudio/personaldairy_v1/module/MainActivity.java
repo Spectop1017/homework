@@ -1,4 +1,4 @@
-package net.muxistudio.personaldairy_v1;
+package net.muxistudio.personaldairy_v1.module;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
@@ -6,15 +6,15 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
+
+import net.muxistudio.personaldairy_v1.R;
 
 
 public class MainActivity extends ActionBarActivity {
     private ListView listView;
     private DairyAdapter adapter;
-
 
     ImageButton addnewdairy;
 
@@ -26,10 +26,9 @@ public class MainActivity extends ActionBarActivity {
         addnewdairy = (ImageButton) findViewById(R.id.button_add_new_dairy);
 
         listView = (ListView) findViewById(R.id.list_dairy_list);
-
         adapter = new DairyAdapter(this);
-
         listView.setAdapter(adapter);
+        //Adapter
 
         addnewdairy.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,9 +37,7 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(intent);
             }
         });
-
-
-
+        //添加新日记 -->跳转到新页面
     }
 
 

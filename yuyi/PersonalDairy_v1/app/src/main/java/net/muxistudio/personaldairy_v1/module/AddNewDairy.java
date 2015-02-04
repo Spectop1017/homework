@@ -1,19 +1,42 @@
 package net.muxistudio.personaldairy_v1.module;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import net.muxistudio.personaldairy_v1.R;
+import net.muxistudio.personaldairy_v1.database.MyDairyDao;
 
 
 public class AddNewDairy extends ActionBarActivity {
+    MyDairyDao myDairyDao;
+
+    EditText title, content;
+    Button save;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_dairy);
+
+        myDairyDao = new MyDairyDao(this);
+        title = (EditText) findViewById(R.id.edit_add_title);
+        content = (EditText) findViewById(R.id.edit_add_content);
+
+        save = (Button) findViewById(R.id.button_add_finish);
+
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myDairyDao.insert(title.getText().toString(),content.getText().toString());
+                finish();
+            }
+        });
     }
 
 

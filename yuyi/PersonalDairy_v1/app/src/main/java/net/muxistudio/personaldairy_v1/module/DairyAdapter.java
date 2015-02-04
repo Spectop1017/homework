@@ -20,13 +20,15 @@ import java.util.Map;
 public class DairyAdapter extends BaseAdapter {
     private Context context;
     private LayoutInflater layoutInflater;
-    MyDairyDao myDairyDao = new MyDairyDao(context);
+    MyDairyDao myDairyDao;
 
 
-    List<Map<String ,String >> list = myDairyDao.loadDairy();
+    List<Map<String ,String >> list;
 
     public DairyAdapter(Context context) {
         this.context = context;
+        myDairyDao = new MyDairyDao(context);
+        list = myDairyDao.loadDairy();
         layoutInflater = layoutInflater.from(context);
     }
 

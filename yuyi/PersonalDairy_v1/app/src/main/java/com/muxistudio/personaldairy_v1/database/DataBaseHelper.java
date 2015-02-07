@@ -1,4 +1,4 @@
-package net.muxistudio.personaldairy_v1.database;
+package com.muxistudio.personaldairy_v1.database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 /**
  * Created by root on 15-2-3.
+ * DataBase Interface
  */
 public class DataBaseHelper extends SQLiteOpenHelper {
     private final static String DATABASE_NAME = "dairy_db";
@@ -40,8 +41,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public static SQLiteDatabase getInstance(Context context){
-        if (instance == null){
+    public static SQLiteDatabase getInstance(Context context) {
+        if (instance == null) {
             instance = new DataBaseHelper(context);
         }
         return instance.getReadableDatabase();

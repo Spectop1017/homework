@@ -1,4 +1,4 @@
-package net.muxistudio.personaldairy_v1;
+package com.muxistudio.personaldairy_v1;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

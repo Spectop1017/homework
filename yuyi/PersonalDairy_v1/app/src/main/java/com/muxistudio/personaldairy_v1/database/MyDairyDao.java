@@ -1,4 +1,4 @@
-package net.muxistudio.personaldairy_v1.database;
+package com.muxistudio.personaldairy_v1.database;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -11,6 +11,9 @@ import java.util.Map;
 
 /**
  * Created by root on 15-2-3.
+ * Including:
+ * insert(String, String);
+ * loadDairy();return a list with TITLE and CONTENT.
  */
 public class MyDairyDao {
     private SQLiteDatabase db;
@@ -19,22 +22,22 @@ public class MyDairyDao {
         db = DataBaseHelper.getInstance(context);
     }
 
-    public void insert(String title, String content){
+    public void insert(String title, String content) {
         String insertDairySQL = "INSERT INTO " + DataBaseHelper.TABLE_DAIRY
                 + " VALUES (NULL, ?, ?)";
         db.execSQL(insertDairySQL, new String[]{title, content});
         //插入数据
     }
 
-    public List<Map<String, String>> loadDairy(){
+    public List<Map<String, String>> loadDairy() {
         String querySQL = "SELECT * FROM " + DataBaseHelper.TABLE_DAIRY;
         Cursor cursor = db.rawQuery(querySQL, null);
 
-        List<Map<String ,String >> list = new ArrayList<>();
+        List<Map<String, String>> list = new ArrayList<>();
 
-        if (cursor.getCount() >= 1){
-            while (cursor.moveToNext()){
-                Map<String ,String > map = new HashMap<>();
+        if (cursor.getCount() >= 1) {
+            while (cursor.moveToNext()) {
+                Map<String, String> map = new HashMap<>();
                 map.put(DataBaseHelper.KEY_DAIRY_TITLE,
                         cursor.getString(cursor.getColumnIndex(DataBaseHelper.KEY_DAIRY_TITLE)));
                 map.put(DataBaseHelper.KEY_DAIRY_CONTENT,

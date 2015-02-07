@@ -1,6 +1,5 @@
-package net.muxistudio.personaldairy_v1.module;
+package com.muxistudio.personaldairy_v1.module;
 
-import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,8 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import net.muxistudio.personaldairy_v1.R;
-import net.muxistudio.personaldairy_v1.database.MyDairyDao;
+import com.muxistudio.personaldairy_v1.R;
+import com.muxistudio.personaldairy_v1.database.MyDairyDao;
 
 
 public class AddNewDairy extends ActionBarActivity {
@@ -33,7 +32,7 @@ public class AddNewDairy extends ActionBarActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myDairyDao.insert(title.getText().toString(),content.getText().toString());
+                myDairyDao.insert(title.getText().toString(), content.getText().toString());
                 finish();
             }
         });

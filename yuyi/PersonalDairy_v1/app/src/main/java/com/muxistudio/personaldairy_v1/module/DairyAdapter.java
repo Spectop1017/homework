@@ -1,4 +1,4 @@
-package net.muxistudio.personaldairy_v1.module;
+package com.muxistudio.personaldairy_v1.module;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,29 +7,32 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import net.muxistudio.personaldairy_v1.R;
-import net.muxistudio.personaldairy_v1.database.DataBaseHelper;
-import net.muxistudio.personaldairy_v1.database.MyDairyDao;
+import com.muxistudio.personaldairy_v1.R;
+import com.muxistudio.personaldairy_v1.database.DataBaseHelper;
+import com.muxistudio.personaldairy_v1.database.MyDairyDao;
 
 import java.util.List;
 import java.util.Map;
 
 /**
  * Created by root on 15-2-2.
+ * BaseAdapter
+ * Including:
+ * refreshList(); to reload the list.
+ * getIndex(List); to get index.
+ * getTitle(List,int) to get the specified TITLE by the index.
+ * getContent(List,int) to get the specified CONTENT by the index.
  */
 public class DairyAdapter extends BaseAdapter {
-    private Context context;
     private LayoutInflater layoutInflater;
     MyDairyDao myDairyDao;
 
-
-    List<Map<String ,String >> list;
+    List<Map<String, String>> list;
 
     public DairyAdapter(Context context) {
-        this.context = context;
         myDairyDao = new MyDairyDao(context);
         list = myDairyDao.loadDairy();
-        layoutInflater = layoutInflater.from(context);
+        layoutInflater = LayoutInflater.from(context);
     }
 
     @Override
@@ -61,10 +64,16 @@ public class DairyAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) view.getTag();
         }
 
-        viewHolder.title.setText(getTitle(list,i));
-        viewHolder.content.setText(getContent(list,i));
+        viewHolder.title.setText(getTitle(list, i));
+        viewHolder.content.setText(getContent(list, i));
 
         return view;
+    }
+
+    public void refreshList() {
+        list.clear();
+        list.addAll(myDairyDao.loadDairy());
+        notifyDataSetChanged();
     }
 
     class ViewHolder {
@@ -72,20 +81,20 @@ public class DairyAdapter extends BaseAdapter {
         TextView content;
     }
 
-    protected int getIndex(List list) {
+    protected int getIndex(List<Map<String, String>> list) {
         return list.size();
     }  //返回list长度
 
-    protected String getTitle(List list, int i) {
+    protected String getTitle(List<Map<String, String>> list, int i) {
         String title;
-        Map<String ,String > map = (Map<String, String>) list.get(i);
+        Map<String, String> map = list.get(i);
         title = map.get(DataBaseHelper.KEY_DAIRY_TITLE);
         return title;
     }  //返回list(i)的title
 
-    protected String getContent(List list,int i) {
+    protected String getContent(List<Map<String, String>> list, int i) {
         String content;
-        Map<String ,String > map = (Map<String, String>) list.get(i);
+        Map<String, String> map = list.get(i);
         content = map.get(DataBaseHelper.KEY_DAIRY_CONTENT);
         return content;
     }  //返回list(i)的content

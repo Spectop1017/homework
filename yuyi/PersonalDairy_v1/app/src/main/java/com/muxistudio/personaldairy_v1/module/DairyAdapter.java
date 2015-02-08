@@ -26,6 +26,7 @@ import java.util.Map;
 public class DairyAdapter extends BaseAdapter {
     private LayoutInflater layoutInflater;
     MyDairyDao myDairyDao;
+    int bound;
 
     List<Map<String, String>> list;
 
@@ -64,8 +65,8 @@ public class DairyAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) view.getTag();
         }
 
-        viewHolder.title.setText(getTitle(list, i));
-        viewHolder.content.setText(getContent(list, i));
+        viewHolder.title.setText(getTitle(list, bound-i-1));
+        viewHolder.content.setText(getContent(list, bound-i-1));
 
         return view;
     }
@@ -82,6 +83,7 @@ public class DairyAdapter extends BaseAdapter {
     }
 
     protected int getIndex(List<Map<String, String>> list) {
+        bound = list.size();
         return list.size();
     }  //返回list长度
 

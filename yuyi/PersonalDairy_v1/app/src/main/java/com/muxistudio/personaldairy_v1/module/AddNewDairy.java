@@ -32,8 +32,10 @@ public class AddNewDairy extends ActionBarActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myDairyDao.insert(title.getText().toString(), content.getText().toString());
-                finish();
+                if (!title.getText().toString().equals("") && !content.getText().toString().equals("")) {
+                    myDairyDao.insert(title.getText().toString(), content.getText().toString());
+                    finish();
+                }
             }
         });
     }

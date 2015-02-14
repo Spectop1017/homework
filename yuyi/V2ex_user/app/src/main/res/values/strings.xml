@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">V2ex_user</string>
+    <string name="userpage_title">用 户 信 息</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_user_page">UserPage</string>
+    <string name="twitter">twitter:</string>
+    <string name="github">GitHub:</string>
+    <string name="bio">个人留言：</string>
+    <string name="follow">关 注 TA</string>
+    <string name="id">ID:</string>
+    <string name="back"><![CDATA[<]]></string>
+    <string name="diviceLine">diviceLine</string>
+    <string name="userpic">userpic</string>
+    <string name="v2ex">V2EX 用户查询</string>
+    <string name="radio_username">用户名查询      </string>
+    <string name="radio_id">ID查询</string>
+    <string name="hint_search">输入查询的信息：用户名/ID</string>
+    <string name="lazy">TA 很懒，什么也没有留下</string>
+    <string name="noyet">未填写</string>
+
+</resources>

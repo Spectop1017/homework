@@ -1,0 +1,180 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.muxistudio.v2ex_user.UserPage">
+
+    <Button
+        android:id="@+id/userpage_back"
+        android:layout_width="40dp"
+        android:layout_height="32dp"
+        android:background="#500000ff"
+        android:text="@string/back"
+        android:textSize="8pt" />
+
+    <TextView
+        android:id="@+id/userpage_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/userpage_back"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@string/userpage_title"
+        android:textSize="14pt"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/userpage_line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/userpage_title"
+        android:layout_margin="8dp"
+        android:background="#000000"
+        android:contentDescription="@string/diviceLine" />
+
+    <ImageView
+        android:id="@+id/userpage_picture"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/userpage_line"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/userpic" />
+
+    <TextView
+        android:id="@+id/userpage_id_K"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userpage_picture"
+        android:layout_marginBottom="8dp"
+        android:textStyle="bold"
+        android:text="@string/id"
+        android:textSize="8pt" />
+
+    <TextView
+        android:id="@+id/userpage_id_V"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userpage_picture"
+        android:layout_toRightOf="@id/userpage_id_K"
+        android:ellipsize="end"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:textIsSelectable="true"
+        android:textSize="8pt" />
+
+    <TextView
+        android:id="@+id/userpage_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userpage_line"
+        android:layout_margin="8dp"
+        android:layout_toRightOf="@id/userpage_picture"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:textIsSelectable="true"
+        android:textSize="12pt"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/userpage_tagline"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_below="@id/userpage_username"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@id/userpage_picture"
+        android:ellipsize="end"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:textIsSelectable="true"
+        android:textSize="8pt" />
+
+
+
+    <TextView
+        android:id="@+id/userpage_twitter_K"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userpage_id_K"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/twitter"
+        android:textStyle="bold"
+        android:textSize="10pt" />
+
+    <TextView
+        android:id="@+id/userpage_twitter_V"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userpage_id_K"
+        android:layout_toRightOf="@id/userpage_twitter_K"
+        android:ellipsize="end"
+        android:hint="@string/noyet"
+        android:layout_marginTop="4dp"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:textIsSelectable="true"
+        android:textSize="8pt" />
+
+    <TextView
+        android:id="@+id/userpage_github_K"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userpage_twitter_K"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/github"
+        android:textStyle="bold"
+        android:textSize="10pt" />
+
+    <TextView
+        android:id="@+id/userpage_github_V"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userpage_twitter_K"
+        android:layout_toRightOf="@id/userpage_github_K"
+        android:hint="@string/noyet"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:textIsSelectable="true"
+        android:textSize="8pt" />
+
+    <Button
+        android:id="@+id/userpage_follow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#70ff0000"
+        android:text="@string/follow"
+        android:textSize="10pt" />
+
+    <TextView
+        android:id="@+id/userpage_bio_K"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userpage_github_K"
+        android:text="@string/bio"
+        android:textStyle="bold"
+        android:textSize="10pt" />
+
+    <TextView
+        android:id="@+id/userpage_bio_V"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/userpage_follow"
+        android:layout_below="@id/userpage_bio_K"
+        android:ellipsize="end"
+        android:layout_marginTop="8dp"
+        android:paddingLeft="16dp"
+        android:hint="@string/lazy"
+        android:selectAllOnFocus="true"
+        android:textIsSelectable="true"
+        android:textSize="8pt" />
+
+
+</RelativeLayout>
